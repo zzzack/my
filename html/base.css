@@ -1,0 +1,402 @@
+@charset "utf-8";
+
+/* reset */
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+  color: #333;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+  font: 12px/1.5 "\5FAE\8F6F\96C5\9ED1", "Microsoft Yahei", "Hiragino Sans GB", tahoma, arial, "\5B8B\4F53";
+  -webkit-font-smoothing: antialiased;
+}
+
+input, select, textarea {
+  font-size: 100%;
+}
+
+/* 去掉各 table cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* IE bug fixed: th 不继承 text-align */
+th {
+  text-align: inherit;
+}
+
+/* 去除默认边框 */
+fieldset, img {
+  border: 0;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+  display: block;
+}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+
+i {
+  font-style: normal;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol, ul {
+  list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+  text-align: left;
+}
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 500;
+  color: #000;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3, h4, h5, h6 {
+  font-size: 14px;
+}
+
+/* 解决ie下重复最后字符 */
+q:before, q:after {
+  content: '';
+}
+
+/* 统一上标和下标 */
+sub, sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+  text-decoration: none;
+}
+
+a, highlight, {
+  -webkit-transition: color .2s;
+  -moz-transition: color .2s;
+  -ms-transition: color .2s;
+  -o-transition: color .2s;
+}
+
+a, a:link, a:visited, a:hover {
+  color: #00a2ca;
+}
+
+
+
+/* 清理浮动 */
+.clear:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clear {
+  zoom: 1; /* for IE6 IE7 */
+}
+
+
+
+/* 隐藏, 通常用来与 JS 配合 */
+body .hide {
+  display: none;
+}
+
+/* inline对齐方式 */
+.align-right {
+  text-align: right !important;
+}
+
+.align-left {
+  text-align: left !important;
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+/* 设置内联, 减少浮动带来的bug */
+.inline {
+  display: inline;
+}
+
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}
+
+/* 隐藏 */
+.hide {
+  display: none !important;
+}
+
+/* 颜色 */
+.red {
+  color: #e00;
+}
+
+.orange {
+  color: #f60;
+}
+
+.blue {
+  color: #00a2ca;
+}
+
+.green {
+  color: #390;
+}
+
+.black {
+  color: #000;
+}
+
+.dark {
+  color: #333;
+}
+
+.gray {
+  color: #666;
+}
+
+.pale {
+  color: #999;
+}
+
+.light {
+  color: #ccc;
+}
+
+
+
+/* 为栅格两边留白10像素 */
+.row-edge {
+  padding-left: 10px;
+  padding-right: 10px;
+  *padding-left: 0;
+  *padding-right: 0;
+}
+
+
+/* 白色按钮 */
+.btn-white{
+	background: #fff; border-color: #00a2ca; color: #00a2ca;
+}
+.btn-white:hover, .btn-white:active{
+	color: #fff;
+}
+/* 反色按钮 */
+.btn-anti{
+	background: #fff; border-color: #fff; color: #00a2ca;
+}
+.btn-anti:hover{
+	background: #9cddf5; border-color: #9cddf5;
+}
+.btn-anti:active{
+	background: #5acbeb; border-color: #5acbeb; color: #fff;
+}
+/* 透明按钮 */
+.btn-trans{
+	background: transparent; border-color: #fff; color: #fff;
+}
+.btn-trans:hover{
+	background: #fff; color: #000;
+}
+.btn-trans:active{
+	background: #e7e7e7; border-color: #e7e7e7;
+}
+/* 按钮尺寸 */
+.btn-blue.btn-l, .btn-white.btn-l, .btn-anti.btn-l, .btn-trans.btn-l{
+	min-width: 180px; height: 42px; padding: 0 40px; line-height: 38px; font-size: 18px;
+	*padding: 0 20px;
+}
+.btn-blue.btn-s, .btn-white.btn-s, .btn-anti.btn-s, .btn-trans.btn-s{
+	min-width: 100px; height: 26px; padding: 0 20px; line-height: 20px; font-size: 12px;
+	*padding: 0 10px;
+}
+/* 按钮置灰 */
+.btn-blue.btn-disabled, .btn-white.btn-disabled, 
+.btn-blue:hover.btn-disabled, .btn-white:hover.btn-disabled, 
+.btn-blue:active.btn-disabled, .btn-white:active.btn-disabled{
+	background: #efefef; border-color: #efefef; color: #ccc; cursor: default;
+}
+.btn-anti.btn-disabled, .btn-trans.btn-disabled,
+.btn-anti:hover.btn-disabled, .btn-trans:hover.btn-disabled,
+.btn-anti:active.btn-disabled, .btn-trans:active.btn-disabled{
+	background: #c4c4c4; border-color: #c4c4c4; color: #8d8d8d; cursor: default;
+} 				
+
+/* 链接模拟按钮样式 */
+a.btn-blue, a.btn-blue:link, a.btn-blue:visited,
+a.btn-white, a.btn-white:link, a.btn-white:visited,
+a.btn-anti, a.btn-anti:link, a.btn-anti:visited,
+a.btn-trans, a.btn-trans:link, a.btn-trans:visited{
+	display: inline-block; min-width: 78px; height: 33px; padding: 0 30px 1px; background: #00a2ca; line-height: 33px; font-size: 14px; color: #fff; text-align: center; outline: none;
+	border-radius: 0px;
+	*width: auto;
+}
+a.btn-blue:hover{
+	background: #33b5d4; border-color: #33b5d4; text-decoration: none;
+}
+a.btn-blue:active{
+	background: #008fb2; border-color: #008fb2;
+}
+/* 白色链接按钮 */
+a.btn-white, a.btn-white:link, a.btn-white:visited{
+	background: #fff; border-color: #00a2ca; color: #00a2ca;
+}
+a.btn-white:hover{
+	background: #33b5d4; border-color: #33b5d4; color: #fff; text-decoration: none;
+}
+a.btn-white:active{
+	background: #008fb2; border-color: #008fb2; color: #fff;
+}
+/* 反色链接按钮 */
+a.btn-anti, a.btn-anti:link, a.btn-anti:visited{
+	background: #fff; border-color: #fff; color: #00a2ca;
+}
+a.btn-anti:hover{
+	background: #9cddf5; border-color: #9cddf5; text-decoration: none;
+}
+a.btn-anti:active{
+	background: #5acbeb; border-color: #5acbeb; color: #fff;
+}
+/* 透明链接按钮 */
+a.btn-trans, a.btn-trans:link, a.btn-trans:visited{
+	background: transparent; border-color: #fff; color: #fff;
+}
+a.btn-trans:hover{
+	background: #fff; color: #000; text-decoration: none;
+}
+a.btn-trans:active{
+	background: #e7e7e7; border-color: #e7e7e7;
+}
+/* 链接按钮尺寸 */
+a.btn-blue.btn-l, a.btn-blue:link.btn-l, a.btn-blue:visited.btn-l, a.btn-blue:hover.btn-l, 
+a.btn-white.btn-l, a.btn-white:link.btn-l, a.btn-white:visited.btn-l, a.btn-white:hover.btn-l,
+a.btn-anti.btn-l, a.btn-anti:link.btn-l, a.btn-anti:visited.btn-l, a.btn-anti:hover.btn-l,
+a.btn-trans.btn-l, a.btn-trans:link.btn-l, a.btn-trans:visited.btn-l, a.btn-trans:hover.btn-l{
+	min-width: 98px; height: 40px; padding: 0 40px; line-height: 40px; font-size: 18px;
+}
+a.btn-blue.btn-s, a.btn-blue:link.btn-s, a.btn-blue:visited.btn-s, a.btn-blue:hover.btn-s,
+a.btn-white.btn-s, a.btn-white:link.btn-s, a.btn-white:visited.btn-s, a.btn-white:hover.btn-s,
+a.btn-anti.btn-s, a.btn-anti:link.btn-s, a.btn-anti:visited.btn-s, a.btn-anti:hover.btn-s,
+a.btn-trans.btn-s, a.btn-trans:link.btn-s, a.btn-trans:visited.btn-s, a.btn-trans:hover.btn-s{
+	min-width: 58px; height: 24px; padding: 0 20px; line-height: 2; font-size: 12px;
+}
+/* 链接按钮置灰 */
+a.btn-blue.btn-disabled, a.btn-blue:link.btn-disabled, a.btn-blue:visited.btn-disabled, a.btn-blue:hover.btn-disabled, a.btn-blue:active.btn-disabled,
+a.btn-white.btn-disabled, a.btn-white:link.btn-disabled, a.btn-white:visited.btn-disabled, a.btn-white:hover.btn-disabled, a.btn-white:active.btn-disabled{
+	background: #efefef; border-color: #efefef; color: #ccc; cursor: default;
+}
+a.btn-anti.btn-disabled, a.btn-anti:link.btn-disabled, a.btn-anti:visited.btn-disabled, a.btn-anti:hover.btn-disabled, a.btn-anti:active.btn-disabled,
+a.btn-trans.btn-disabled, a.btn-trans:link.btn-disabled, a.btn-trans:visited.btn-disabled, a.btn-trans:hover.btn-disabled, a.btn-trans:active.btn-disabled{
+	background: #c4c4c4; border-color: #c4c4c4; color: #8d8d8d; cursor: default;
+}
+
+/* 表单结构 */
+.form{}
+.form .row{
+	line-height: 1.5; padding: 8px 0; overflow: visible; font-size: 12px;
+	-webkit-transition: all .3s; -moz-transition: all .3s; -ms-transition: all .3s; -o-transition: all .3s;
+}
+.form .row-hide{
+    padding: 0; height: 0; overflow: hidden; line-height: 0;
+}
+.form .row .row-name{
+	float: left; display: inline; width: 180px; height: 18px; padding: 4px 0; text-align: right; color: #666;
+}
+.form .row .row-column{
+	margin-left: 184px; line-height: 26px;
+}
+.form .row .row-li{
+	padding: 0; line-height: 26px;
+}
+.form .row, .form .row .row-column, .form .row .row-li{
+    zoom: 1;
+}
+.form .row:after, .form .row .row-column:after, .form .row .row-li:after{
+    visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;
+}
+/* 分割线 */
+.form .dashed{
+    border-top: dashed 1px #d6d6d6; height: 0; overflow: hidden; margin: 10px 9px;
+}
+/* 表单元素 */
+/* 输入框 */
+.form .input, .input{
+	height: 18px; width: 284px; padding: 3px 7px; border: solid 1px #ccc; background: #fff; border-radius: 4px; outline: none; line-height: 1.5; color: #000;
+	-webkit-transition: all .3s; -moz-transition: all .3s; -ms-transition: all .3s; -o-transition: all .3s;
+}
+.form textarea.input, textarea.input{
+    height: auto; vertical-align: top;
+}
